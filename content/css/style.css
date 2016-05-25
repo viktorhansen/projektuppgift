@@ -1,11 +1,13 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
-
+.navbar img {
+  width: 70%;
+}
 .navbar {
   background-color: black;
   margin-bottom: 0px;
-  padding: 30px 15px;
+  padding: 30px 30px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -19,7 +21,7 @@ body {
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 70%;
+    width: 50%;
   }
 }
 
@@ -39,7 +41,7 @@ body {
 }
 
 .content-filler {
-  min-height: 350px;
+  min-height: 300px;
 }
 
 .down-button {
@@ -60,6 +62,17 @@ body {
   .fixed-attachment {
     background-attachment: scroll;
   }
+}
+
+.register {
+  margin-top: 40px;
+}
+
+.input-group {
+  width: 400px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 h3 {
