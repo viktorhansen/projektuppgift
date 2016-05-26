@@ -35,6 +35,14 @@ body {
   opacity: 0.8;
 }
 
+.register {
+  position: absolute;
+  width: 100%;
+  top: 300px;
+  text-align: center;
+  color: white;
+}
+
 .fill-screen {
   background-size: cover;
   background-position: center;
@@ -44,14 +52,22 @@ body {
   min-height: 300px;
 }
 
-.down-button {
+.about-text {
   position: absolute;
-  bottom: 40px;
+  bottom: 350px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.login {
+  position: absolute;
+  bottom: 100px;
   width: 100%;
   text-align: center;
 }
 
-.down-button i {
+.login h2 {
   color: white;
 }
 
@@ -64,8 +80,11 @@ body {
   }
 }
 
-.register {
-  margin-top: 40px;
+.register-text {
+  position: relative;
+  color: white;
+  top: 500px;
+  text-align: center;
 }
 
 .input-group {
@@ -95,5 +114,5 @@ aside {
 section {
   background-color: lightgrey;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 10px;
 }

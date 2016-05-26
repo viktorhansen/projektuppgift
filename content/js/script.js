@@ -1,4 +1,4 @@
-var submitBtn = document.getElementById('submitbutt');
+var submitBtn = document.getElementById('submitBtn');
 submitBtn.addEventListener("click", validateForm);
 
 function validateForm() {

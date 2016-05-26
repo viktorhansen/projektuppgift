@@ -12,7 +12,6 @@
   <header id="top">
     <nav class="navbar navbar-inverse navbar-fixed-top cbp-af-header" role="navigation">
       <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -25,82 +24,62 @@
           </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#about">Om oss</a></li>
             <li><a href="#register">Registrera dig</a></li>
-            <li><a href="#login">Logga in</a></li>
+            <li><a href="#about">Logga in</a></li>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+        </div>
+      </div>
     </nav>
   </header>
   <div class="container-fluid">
 
     <section id="about" class="row">
       <div class="fill-screen" style="background-image: url(content/images/bike.jpg)">
-        <div class="down-button">
-          <a class="btn" href="#register">
-            <i class="fa fa-arrow-circle-down fa-4x"></i>
-          </a>
+        <div class="about-text">
+          <div class="col-md-6">
+            <h3>Vi gör ditt cyklande problemfritt!</h3>
+            <p>
+              Genom att försäkra dig via oss löser vi enkelt din punktering eller annat cykelrelaterat problem på plats.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h3>Medlemsskap</h3>
+            <p>
+              Välj att antingen betala en fast månadskostnad eller en avgift för varje felavhjälpning.
+            </p>
+            <a href="#register"><button type="button" class="btn btn-default">Registrera dig här</button></a>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="row content-filler">
-      <div class="col-md-6">
-        <h3>Vi gör ditt cyklande problemfritt!</h3>
-        <p>
-          Genom att försäkra dig via oss löser vi enkelt din punktering eller annat cykelrelaterat problem på plats.
-        </p>
-      </div>
-      <div class="col-md-6">
-        <h3>Medlemsskap</h3>
-        <p>
-          Välj att antingen betala en fast månadskostnad eller en avgift för varje felavhjälpning.
-        </p>
+        <div class="login">
+          <h2>Logga in</h2>
+          <form name="userlgn" class="input-group">
+            <span class="input-group-addon" id="basic-addon">@</span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon" name="username">
+            <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon" name="password">
+          </form>
+          <button type="button" class="btn btn-default" id="submitBtn">Logga in</button>
+        </div>
       </div>
     </section>
 
     <section id="register" class="row">
       <div class="fill-screen fixed-attachment" style="background-image: url(content/images/punktering.jpg)">
+        <div class="register-text">
+          <h2>Gå med i BikeNow nu för ett problemfritt cyklande!</h2>
+          <h3>Registrera dig som kund</h3>
+          <p>
+            Vill du försäkra dig via BikeNow registrerar du dig här
+          </p>
+          <a href="register.html"><button type="button" class="btn btn-default">Registrera</button></a>
+        </div>
       </div>
     </section>
 
-    <section class="row content-filler">
-      <h2>Gå med i BikeNow nu för ett problemfritt cyklande!</h2>
-      <div class="register col-md-6">
-        <h3>Registrera dig som kund</h3>
-        <p>
-          Vill du försäkra dig via BikeNow registrerar du dig här
-        </p>
-        <a href="register-client.html" class="btn btn-link" role="button">Registrera dig</a>
-      </div>
-      <div class="register col-md-6">
-        <h3>Registrera dig som reparatör</h3>
-        <p>
-          Vill du arbeta som reparatör för BikeNow registrerar du dig här
-        </p>
-        <a href="register-rep.html" class="btn btn-link" role="button">Registrera dig</a>
-      </div>
-    </section>
-
-    <section id="login" class="row">
-      <div class="fill-screen fixed-attachment" style="background-image: url(content/images/lagning.jpg)">
-      </div>
-    </section>
-
-    <section class="row content-filler">
-      <h2>Logga in</h2>
-      <form name="userlgn" class="input-group">
-        <span class="input-group-addon" id="basic-addon">@</span>
-        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon" name="username">
-        <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon" name="password">
-      </form>
-      <button type="button" class="btn btn-default" id="submitbutt">Logga in</button>
-    </section>
   </div>
+
   <footer class="container-fluid">
     <h1>Kontakt</h1>
     <p>email@bikenow.se</p>
