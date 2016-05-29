@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+
+
+ ?>
+
+
+
 <head>
   <title>BikeNow</title>
   <meta charset="utf-8">
@@ -10,42 +16,23 @@
 </head>
 
 <body>
-  <header id="top">
-    <nav class="navbar navbar-inverse navbar-fixed-top cbp-af-header" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#top">
-            <img src="content/images/bikenow.png" />
-          </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html">Logga ut</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <?php readfile('_navbar.php');  ?>
 
   <div class="container-fluid">
     <section id="about" class="row">
       <div class="fill-screen" style="background-image: url(content/images/lagning.jpg)">
-
+        <div class="register">
+          <h2>Registreringen lyckades!</h2>
+          <h3>Tryck för att återgå till startsidan och logga in</h3>
+          <a href="index.html">
+            <button type="button" class="btn btn-default">Logga in</button>
+          </a>
+        </div>
       </div>
     </section>
   </div>
 
-  <footer class="container-fluid">
-    <h1>Kontakt</h1>
-    <p>email@bikenow.se</p>
-  </footer>
+  <?php readfile('_footer.php'); ?>
 
   <script src="content/js/jquery-1.12.2.min.js"></script>
   <script src="content/js/bootstrap.min.js"></script>

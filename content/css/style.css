@@ -29,6 +29,10 @@ body {
   color: #bbb;
 }
 
+.login p {
+  color: white;
+}
+
 .cbp-af-header-shrink {
   padding-top: 10px;
   padding-bottom: 10px;

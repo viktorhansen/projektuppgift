@@ -1,4 +1,35 @@
+<?php
+  include('connection.php');
+  session_start();
+
+  if ($_POST['submit']) {
+    include_once('connection.php');
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT userId, userName, passWord FROM users WHERE userName = 'username' LIMIT 1";
+    $query = mysql_query($connect, $sql);
+
+    if ($query) {
+      $row = mysqli_fetch_row($query);
+      $userId = $row[0];
+      $dbUserName = $row[1];
+      $dbPassWord = $row[2];
+    }
+
+    if ($username == $dbUserName && $password == $dbPassWord) {
+      $_SESSION['username'] = $username;
+      $_SESSION['userId'] = $userId;
+      header['Location: member-page.php'];
+    }
+    else {
+      echo "Felaktigt användarnamn eller lösenord";
+    }
+  }
+
+  ?>
 <!DOCTYPE html>
+<html>
 <head>
   <title>BikeNow</title>
   <meta charset="utf-8">
@@ -9,31 +40,8 @@
   <link href="content/css/style.css" rel="stylesheet" />
 </head>
 <body>
-  <header id="top">
-    <nav class="navbar navbar-inverse navbar-fixed-top cbp-af-header" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#top">
-            <img src="content/images/bikenow.png" />
-          </a>
-        </div>
+  <?php readfile('_navbar.php');  ?>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about">Om oss</a></li>
-            <li><a href="#register">Registrera dig</a></li>
-            <li><a href="#about">Logga in</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
   <div class="container-fluid">
 
     <section id="about" class="row">
@@ -55,13 +63,14 @@
         </div>
         <div class="login">
           <h2>Logga in</h2>
-          <form name="userlgn" class="input-group">
+          <form action="index.php" method="POST" name="userlgn" class="input-group">
             <span class="input-group-addon" id="basic-addon">@</span>
             <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon" name="username">
-            <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon" name="password">
+            <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon" name="password">
+            <button type="button" class="btn btn-default" id="submit" name="submit">Logga in</button>
           </form>
-          <a href="member-page.html"><button type="button" class="btn btn-default" id="submitBtn">Logga in</button></a>
         </div>
+        <h1> <?php echo $username ?></h1>
       </div>
     </section>
 
@@ -73,26 +82,15 @@
           <p>
             Vill du försäkra dig via BikeNow registrerar du dig här
           </p>
-          <a href="register.html"><button type="button" class="btn btn-default">Registrera</button></a>
+          <a href="register.php"><button type="button" class="btn btn-default">Registrera</button></a>
         </div>
       </div>
     </section>
 
   </div>
 
-  <footer class="container-fluid">
-    <h1>Kontakt</h1>
-    <div class="col-md-6">
-      <p>
-        email@bikenow.se
-      </p>
-    </div>
-    <div class="col-md-6">
-      <p>
-        tel 018-234874
-      </p>
-    </div>
-  </footer>
+  <?php readfile('_footer.php'); ?>
+
   <script src="content/js/jquery-1.12.2.min.js"></script>
   <script src="content/js/bootstrap.min.js"></script>
   <script src="content/js/classie.js"></script>
