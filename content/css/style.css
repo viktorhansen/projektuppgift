@@ -25,6 +25,20 @@ body {
   }
 }
 
+.anmal table {
+  background-color: BEC8CC;
+  opacity: 0.5;
+  color: 080A0A;
+}
+
+.table td {
+  width: 200px;
+}
+
+.table tr{
+  margin: 20px;
+}
+
 .navbar-inverse .navbar-nav>li>a {
   color: #bbb;
 }
@@ -71,8 +85,31 @@ body {
   text-align: center;
 }
 
+.login p {
+  color: red;
+}
+
 .login h2 {
   color: white;
+}
+
+.member {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.arenden {
+
+  display: inline-block;
+
+}
+
+.forum {
+  ;
+  display: inline-block;
 }
 
 .fixed-attachment {

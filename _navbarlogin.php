@@ -1,3 +1,15 @@
+<?php
+  require('connection.php');
+
+  if (isset($_POST['logout'])) {
+    session_start();
+    session_destroy();
+    header('Location: index.php');
+  }
+
+  ?>
+
+
 <header id="top">
   <nav class="navbar navbar-inverse navbar-fixed-top cbp-af-header" role="navigation">
     <div class="container-fluid">
@@ -15,9 +27,9 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.php">Om oss</a></li>
-          <li><a href="register.php">Registrera dig</a></li>
-          <li><a href="index.php">Logga in</a></li>
+          <form class="" action="_navbarlogin.php" method="post">
+            <button type="name" class="btn btn-default" name="logout"><li>Logga ut</li></button>
+          </form>
         </ul>
       </div>
     </div>

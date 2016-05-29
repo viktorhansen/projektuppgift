@@ -1,32 +1,41 @@
 <?php
-  include('connection.php');
-  session_start();
 
-  if ($_POST['submit']) {
+  error_reporting(E_ALL);
+  ini_set('display_errors', '1');
+  session_start();
+  $error = false;
+  $error1 = false;
+  if (isset($_POST['submit'])) {
     include_once('connection.php');
+
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT userId, userName, passWord FROM users WHERE userName = 'username' LIMIT 1";
-    $query = mysql_query($connect, $sql);
-
-    if ($query) {
-      $row = mysqli_fetch_row($query);
-      $userId = $row[0];
-      $dbUserName = $row[1];
-      $dbPassWord = $row[2];
+    if ($username === '' || $password === '') {
+      $error1 = true;
     }
 
-    if ($username == $dbUserName && $password == $dbPassWord) {
-      $_SESSION['username'] = $username;
-      $_SESSION['userId'] = $userId;
-      header['Location: member-page.php'];
-    }
     else {
-      echo "Felaktigt användarnamn eller lösenord";
+      $sql = "SELECT userId, userName, passWord FROM users WHERE userName = '$username' LIMIT 1";
+      $query = mysqli_query($connect, $sql);
+
+      if ($query) {
+        $row = mysqli_fetch_row($query);
+        $userId = $row[0];
+        $dbUserName = $row[1];
+        $dbPassWord = $row[2];
+      }
+      if ($username == $dbUserName && $password == $dbPassWord) {
+        $_SESSION['userName'] = $username;
+        $_SESSION['userId'] = $userId;
+        header('Location: member-page.php');
+      }
+
+      else {
+        $error = true;
+      }
     }
   }
-
   ?>
 <!DOCTYPE html>
 <html>
@@ -40,7 +49,6 @@
   <link href="content/css/style.css" rel="stylesheet" />
 </head>
 <body>
-  <?php readfile('_navbar.php');  ?>
 
   <div class="container-fluid">
 
@@ -63,14 +71,24 @@
         </div>
         <div class="login">
           <h2>Logga in</h2>
-          <form action="index.php" method="POST" name="userlgn" class="input-group">
-            <span class="input-group-addon" id="basic-addon">@</span>
-            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon" name="username">
-            <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon" name="password">
-            <button type="button" class="btn btn-default" id="submit" name="submit">Logga in</button>
+          <form action="index.php" method="post">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon">@</span>
+              <input type="text" class="form-control" placeholder="Username" aria-described-by="basic-addon" name="username" />
+              <input type="password" class="form-control" placeholder="Password" name="password" />
+            </div>
+            <div class="input-group">
+              <button type="submit" class="btn btn-default" name="submit">Logga in</button>
+            </div>
           </form>
+          <form class="" action="index.php" method="POST">
+          </form>
+          <p><?php  if ($error) {
+            echo "Felaktigt användarnamn eller lösenord";
+          } if ($error1) {
+            echo "Du måste ange användarnamn och lösenord";
+          }?></p>
         </div>
-        <h1> <?php echo $username ?></h1>
       </div>
     </section>
 

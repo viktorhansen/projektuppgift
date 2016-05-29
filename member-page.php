@@ -1,7 +1,4 @@
-<?php
 
-
-  ?>
 
 <head>
   <title>BikeNow</title>
@@ -14,12 +11,82 @@
 </head>
 
 <body>
-  <?php readfile('_navbar.php');  ?>
+  <?php readfile('_navbarlogin.php');  ?>
 
   <div class="container-fluid">
     <section id="about" class="row">
       <div class="fill-screen" style="background-image: url(content/images/lagning.jpg)">
-
+        <div class="member">
+          <div class="anmal col-md-6">
+            <h4>Anmäl ett ärende</h4>
+            <form class="" action="member-page.php" method="post">
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon">Ärende</span>
+                <input type="text-area" class="form-control" placeholder="Typ av skada" name="name">
+                <input type="text" class="form-control" placeholder="Stadsdel" name="address">
+                <textarea type="text" class="form-control" rows="3" placeholder="Meddelande till reparatör" name="message"></textarea>
+              </div>
+              <div class="input-group">
+                <button type="button" class="btn btn-default" style="color:black;" name="button">Skicka</button>
+              </div>
+            </form>
+          </div>
+          <div class="forum col-md-6">
+            <h4>Skriv ett inlägg</h4>
+            <form class="" action="member-page.php" method="post">
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon">Inlägg</span>
+                <textarea type="text" rows="5" class="form-control" placeholder="Skriv ditt inlägg" name="name"></textarea>
+              </div>
+              <div class="input-group">
+                <button type="button" class="btn btn-default" style="color:black;" name="button">Skicka</button>
+              </div>
+            </form>
+          </div>
+          <div class="anmal col-md-6">
+            <h3>Dina aktiva ärenden</h3>
+            <table class="table table-bordered">
+              <tr>
+                Ärendenummer
+              </tr>
+              <tr>
+                Typ av skada
+              </tr>
+              <tr>
+                Stadsdel
+              </tr>
+              <tr>
+                Meddelande
+              </tr>
+              <tr>
+                Status
+              </tr>
+              <tbody>
+                <td>
+                  hej
+                </td>
+                <td>
+                  på dig
+                </td>
+                <td>
+                  ha
+                </td>
+                <td>
+                  adfasdf
+                </td>
+                <td>
+asdfasf
+                </td>
+                <td>
+                  adf
+                </td>
+              </tbody>
+            </table>
+          </div>
+          <div class="forum col-md-6">
+            <h3>Foruminlägg</h3>
+          </div>
+        </div>
       </div>
     </section>
   </div>

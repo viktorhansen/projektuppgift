@@ -24,7 +24,7 @@
         <div class="register">
           <h2>Registreringen lyckades!</h2>
           <h3>Tryck för att återgå till startsidan och logga in</h3>
-          <a href="index.html">
+          <a href="index.php">
             <button type="button" class="btn btn-default">Logga in</button>
           </a>
         </div>
